@@ -19,8 +19,8 @@ import retrofit.client.Response;
 
 public class ContactsList extends AppCompatActivity {
     ListView contactList;
-    List<Contacts> contactsBaseHolderList = new ArrayList<>();
-    String BASE_URL = "http://api.androidhive.info/";
+    ArrayList<Contacts> contactsHolderList = new ArrayList<>();
+    String BASE_URL = "http://api.androidhive.info";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +33,10 @@ public class ContactsList extends AppCompatActivity {
         ContactRESTApi contactRESTApi = restadapter.create(ContactRESTApi.class);
         contactRESTApi.getData(new Callback<List<Contacts>>() {
             @Override
-            public void success(List<Contacts> contactsBaseHolders, Response response) {
-                contactsBaseHolderList=contactsBaseHolders;
-                contactList.setAdapter(new ContactsAdapter(ContactsList.this,contactsBaseHolderList));
+            public void success(List<Contacts> contactses, Response response) {
+                contactsHolderList= (ArrayList<Contacts>) contactses;
+
+                contactList.setAdapter(new ContactsAdapter(ContactsList.this,contactsHolderList));
             }
 
             @Override
@@ -43,7 +44,6 @@ public class ContactsList extends AppCompatActivity {
 
             }
         });
-
     }
 }
 

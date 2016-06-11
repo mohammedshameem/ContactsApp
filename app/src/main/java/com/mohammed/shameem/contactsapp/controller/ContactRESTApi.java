@@ -15,8 +15,8 @@ import retrofit.http.GET;
  * Created by shameem on 6/11/2016.
  */
 public interface ContactRESTApi {
-    @GET("contacts/")
-    public void getData(Callback<List<ContactsBaseHolder> > contacts);
+    @GET("/contacts")
+    void getData(Callback<List<Contacts> > contacts);
 
 
 }

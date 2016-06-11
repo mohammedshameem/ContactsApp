@@ -1,10 +1,12 @@
 package com.mohammed.shameem.contactsapp.model;
 
+import java.io.Serializable;
+
 /**
  * Created by shameem on 6/11/2016.
  */
 
-public class Contacts {
+public class Contacts implements Serializable {
     private String id;
 
     private Phone phone;

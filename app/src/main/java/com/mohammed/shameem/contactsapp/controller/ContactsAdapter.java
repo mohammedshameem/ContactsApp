@@ -2,15 +2,15 @@ package com.mohammed.shameem.contactsapp.controller;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.mohammed.shameem.contactsapp.R;
-import com.mohammed.shameem.contactsapp.model.ContactsBaseHolder;
-
+import com.mohammed.shameem.contactsapp.model.Contacts;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,19 +18,17 @@ import java.util.List;
  */
 public class ContactsAdapter extends BaseAdapter {
     Context context;
-    List<ContactsBaseHolder> contactsList;
+    ArrayList<Contacts> contactsList = new ArrayList<>();
     LayoutInflater inflater;
 
 
-    public ContactsAdapter(Activity activity, List<ContactsBaseHolder> contactsList) {
+    public ContactsAdapter(Activity activity, ArrayList<Contacts> contactsList) {
         this.context = activity;
         this.contactsList = contactsList;
         inflater = LayoutInflater.from(this.context);
 
 
     }
-
-
 
 
     /**
@@ -51,7 +49,7 @@ public class ContactsAdapter extends BaseAdapter {
      * @return The data at the specified position.
      */
     @Override
-    public ContactsBaseHolder getItem(int position) {
+    public Contacts getItem(int position) {
         return contactsList.get(position);
     }
 
@@ -84,24 +82,26 @@ public class ContactsAdapter extends BaseAdapter {
      * @param parent      The parent that this view will eventually be attached to
      * @return A View corresponding to the data at the specified position.
      */
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View rootLayoutView = convertView;
         ViewHolder viewHolder;
         if (rootLayoutView == null) {
-            rootLayoutView =  inflater.inflate(R.layout.contact_list_item, parent, false);;
+            rootLayoutView = inflater.inflate(R.layout.contact_list_item, parent, false);
             viewHolder = new ViewHolder(rootLayoutView);
             rootLayoutView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) rootLayoutView.getTag();
 
         }
-        ContactsBaseHolder contactsBaseHolder = getItem(position);
-        viewHolder.textViewContactName.setText(contactsList.get(position).getContacts().)
-        viewHolder.textViewContactEmailAddress.setText(c);
-        viewHolder.textViewContactPhoneNumber.setText();
-
-
+        Contacts contacts=getItem(position);
+        viewHolder.textViewContactName.setText(contacts.getName());
+        Log.d("Name===>>>>>>",contacts.getName());
+        viewHolder.textViewContactEmailAddress.setText(contacts.getEmail());
+        Log.d("Email===>>>>>>",contacts.getEmail());
+        viewHolder.textViewContactPhoneNumber.setText(contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>",contacts.getPhone().getMobile());
         return rootLayoutView;
     }
 

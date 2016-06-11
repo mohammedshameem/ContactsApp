@@ -1,9 +1,11 @@
 package com.mohammed.shameem.contactsapp.model;
 
+import java.io.Serializable;
+
 /**
  * Created by shameem on 6/11/2016.
  */
-public class Phone {
+public class Phone implements Serializable {
     private String office;
 
     private String home;
