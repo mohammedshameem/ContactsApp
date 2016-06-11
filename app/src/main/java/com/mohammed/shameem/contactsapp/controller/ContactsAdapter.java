@@ -8,8 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.mohammed.shameem.contactsapp.R;
 import com.mohammed.shameem.contactsapp.model.Contacts;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,13 +97,47 @@ public class ContactsAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) rootLayoutView.getTag();
 
         }
-        Contacts contacts=getItem(position);
+        Contacts contacts = getItem(position);
         viewHolder.textViewContactName.setText(contacts.getName());
-        Log.d("Name===>>>>>>",contacts.getName());
+        Log.d("Name===>>>>>>", contacts.getName());
         viewHolder.textViewContactEmailAddress.setText(contacts.getEmail());
-        Log.d("Email===>>>>>>",contacts.getEmail());
+        Log.d("Email===>>>>>>", contacts.getEmail());
         viewHolder.textViewContactPhoneNumber.setText(contacts.getPhone().getMobile());
-        Log.d("Mobile===>>>>>>",contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
         return rootLayoutView;
     }
 
