@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="list_contact_phone_number">Contact Phone Number</string>
+    <string name="list_contact_email_address">Contact Email Address</string>
+    <string name="list_contact_name">Contact Name</string>
+</resources>
