@@ -16,10 +16,11 @@ import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ContactsList extends AppCompatActivity {
     ListView contactList;
-    ArrayList<Contacts> contactsHolderList = new ArrayList<>();
+    ArrayList<com.mohammed.shameem.contactsapp.model.Response> contactsHolderList = new ArrayList<>();
     String BASE_URL = "http://api.androidhive.info";
 
     @Override
@@ -31,10 +32,10 @@ public class ContactsList extends AppCompatActivity {
 
         final RestAdapter restadapter = new RestAdapter.Builder().setEndpoint(BASE_URL).build();
         ContactRESTApi contactRESTApi = restadapter.create(ContactRESTApi.class);
-        contactRESTApi.getData(new Callback<List<Contacts>>() {
+        contactRESTApi.getData(new Callback<List<com.mohammed.shameem.contactsapp.model.Response>>() {
             @Override
-            public void success(List<Contacts> contactses, Response response) {
-                contactsHolderList= (ArrayList<Contacts>) contactses;
+            public void success(List<com.mohammed.shameem.contactsapp.model.Response> contactses, Response response) {
+                contactsHolderList= (ArrayList<com.mohammed.shameem.contactsapp.model.Response>) contactses;
 
                 contactList.setAdapter(new ContactsAdapter(ContactsList.this,contactsHolderList));
             }

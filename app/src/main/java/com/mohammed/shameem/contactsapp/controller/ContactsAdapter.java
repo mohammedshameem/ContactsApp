@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.mohammed.shameem.contactsapp.R;
 import com.mohammed.shameem.contactsapp.model.Contacts;
+import com.mohammed.shameem.contactsapp.model.Response;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +21,11 @@ import java.util.List;
  */
 public class ContactsAdapter extends BaseAdapter {
     Context context;
-    ArrayList<Contacts> contactsList = new ArrayList<>();
+    ArrayList<Response> contactsList = new ArrayList<>();
     LayoutInflater inflater;
 
 
-    public ContactsAdapter(Activity activity, ArrayList<Contacts> contactsList) {
+    public ContactsAdapter(Activity activity, ArrayList<Response> contactsList) {
         this.context = activity;
         this.contactsList = contactsList;
         inflater = LayoutInflater.from(this.context);
@@ -51,7 +52,7 @@ public class ContactsAdapter extends BaseAdapter {
      * @return The data at the specified position.
      */
     @Override
-    public Contacts getItem(int position) {
+    public Response getItem(int position) {
         return contactsList.get(position);
     }
 
@@ -97,13 +98,12 @@ public class ContactsAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) rootLayoutView.getTag();
 
         }
-        Contacts contacts = getItem(position);
-        viewHolder.textViewContactName.setText(contacts.getName());
-        Log.d("Name===>>>>>>", contacts.getName());
-        viewHolder.textViewContactEmailAddress.setText(contacts.getEmail());
-        Log.d("Email===>>>>>>", contacts.getEmail());
-        viewHolder.textViewContactPhoneNumber.setText(contacts.getPhone().getMobile());
-        Log.d("Mobile===>>>>>>", contacts.getPhone().getMobile());
+        Response contacts = getItem(position);
+        viewHolder.textViewContactName.setText(contacts.getContacts().get(position).getName());
+        Log.d("Name===>>>>>>", contacts.getContacts().get(position).getName());
+        viewHolder.textViewContactEmailAddress.setText(contacts.getContacts().get(position).getEmail());
+        Log.d("Email===>>>>>>", contacts.getContacts().get(position).getEmail());
+        viewHolder.textViewContactPhoneNumber.setText(contacts.getContacts().get(position).getPhone().getMobile());
         return rootLayoutView;
     }
 
